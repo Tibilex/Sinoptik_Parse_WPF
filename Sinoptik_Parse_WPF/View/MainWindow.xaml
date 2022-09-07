@@ -19,15 +19,23 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Text="{Binding TodayTime}" Style="{StaticResource WeatherTodayTB}" Padding="10" Panel.ZIndex="1"/>
                 <Image Grid.Row="0" Grid.RowSpan="2" Margin="0 20 0 0" Source="{Binding WeatherLogo}" Panel.ZIndex="0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="220"/>
+                
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition Width="90"/>
                     </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="/Resources/Termometer.png" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30 10 0 0"/>
+                    <ProgressBar Grid.Column="0" Value="{Binding TermometerValue}" Style="{StaticResource Termometer}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="54 12 0 0">
+                        <ProgressBar.LayoutTransform>
+                            <RotateTransform Angle="270"/>
+                        </ProgressBar.LayoutTransform>
+                    </ProgressBar>
                     <TextBlock Grid.Column="0" Text="{Binding TodayWeather}" Style="{StaticResource TodayWeatherBoldTB}" Margin="40 60 0 0" Panel.ZIndex="0"/>
                     <Border Grid.Column="0" BorderBrush="{StaticResource Color.Midle.Gray}" Margin="0 170 0 0" BorderThickness="1" Height="20" Width="150" CornerRadius="3" >
                         <TextBlock Text="{Binding DuskDown}" Style="{StaticResource WeatherParameterTB}" Padding="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
+                    
                     <Grid Grid.Column="1" Background="Transparent">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>

@@ -134,6 +134,15 @@ namespace Sinoptik_Parse_WPF.ViewModel
                 OnPropertyChanged("Temperature");
             }
         }
+        public int TermometerValue
+        {
+            get => _sinoptik.TermometerValue;
+            set
+            {
+                _sinoptik.TermometerValue = value;
+                OnPropertyChanged("TermometerValue");
+            }
+        }
 
         #region Weather data Properties
 

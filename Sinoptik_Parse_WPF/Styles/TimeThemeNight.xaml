@@ -1,12 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
     <SolidColorBrush x:Key="Color.Gray" Color="#777777"/>
     <SolidColorBrush x:Key="Color.Midle.Gray" Color="#acacac"/>
     <SolidColorBrush x:Key="Color.Blue" Color="#78add3"/>
     <SolidColorBrush x:Key="Color.Light.Blue" Color="#e0eef9"/>
     <SolidColorBrush x:Key="Color.Light.Gray" Color="#f2f2f2"/>
-    
+
 
     <Style x:Key="WeatherTodayTB" TargetType="TextBlock">
         <Setter Property="Foreground" Value="{StaticResource Color.Gray}"/>
@@ -63,11 +62,5 @@
     <Style x:Key="Precipitation" TargetType="TextBlock">
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Padding" Value="0 6 0 0"/>
-    </Style>
-    <Style x:Key="Termometer" TargetType="ProgressBar">
-        <Setter Property="Maximum" Value="40"/>
-        <Setter Property="Height" Value="6"/>
-        <Setter Property="Width" Value="90"/>
-        <Setter Property="Foreground" Value="red"/>
     </Style>
 </ResourceDictionary>

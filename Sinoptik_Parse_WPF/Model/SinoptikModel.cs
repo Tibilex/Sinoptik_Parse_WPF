@@ -18,9 +18,10 @@ namespace Sinoptik_Parse_WPF.Model
         private string _todayTime;
         private string _duskDown;
         private string _temperature;
+        private int _termometerValue;
         private WebClient webClient = new();
         private HtmlDocument htmlDocument = new();
-        private string _downloadString = "https://sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D0%B4%D0%BD%D0%B5%D0%BF%D1%80-303007131/2022-09-07";
+        private string _downloadString = "https://sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D0%B4%D0%BD%D0%B5%D0%BF%D1%80-303007131";
 
         public BitmapImage WeathrLogo
         {
@@ -47,7 +48,11 @@ namespace Sinoptik_Parse_WPF.Model
             get => _temperature;
             set { _temperature = value; }
         }
-
+        public int TermometerValue
+        {
+            get => _termometerValue;
+            set { _termometerValue = value; }
+        }
         public SinoptikModel()
         {
 
@@ -59,6 +64,8 @@ namespace Sinoptik_Parse_WPF.Model
             foreach (var item in htmlDocument.DocumentNode.SelectNodes("//p[@class='today-temp']"))
             {
                 TodayWeather = item.InnerText.Replace("&deg;", "°");
+                var temp = item.InnerText.Replace("&deg;", "").Replace("+", "").Replace("-", "").Replace("C", "");
+                TermometerValue = Convert.ToInt32(temp) + 15;
             }
             foreach (var item in htmlDocument.DocumentNode.SelectNodes("//p[@class='today-time']"))
             {

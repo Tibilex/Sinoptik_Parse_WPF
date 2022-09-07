@@ -8,12 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\termometer.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.45" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\termometer.png" />
   </ItemGroup>
 
   <ItemGroup>
