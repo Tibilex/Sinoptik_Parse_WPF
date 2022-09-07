@@ -5,8 +5,158 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sinoptik_Parse_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="280" Width="700" ResizeMode="NoResize">
     <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="{Binding TodayTime}" Style="{StaticResource WeatherTodayTB}" Padding="10" Panel.ZIndex="1"/>
+                <Image Grid.Row="0" Grid.RowSpan="2" Margin="0 20 0 0" Source="{Binding WeatherLogo}" Panel.ZIndex="0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="220"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="90"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="{Binding TodayWeather}" Style="{StaticResource TodayWeatherBoldTB}" Margin="40 60 0 0" Panel.ZIndex="0"/>
+                    <Border Grid.Column="0" BorderBrush="{StaticResource Color.Midle.Gray}" Margin="0 170 0 0" BorderThickness="1" Height="20" Width="150" CornerRadius="3" >
+                        <TextBlock Text="{Binding DuskDown}" Style="{StaticResource WeatherParameterTB}" Padding="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Grid Grid.Column="1" Background="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="1" Text="Температура, °C" Style="{StaticResource WeatherParameterTB}"/>
+                        <TextBlock Grid.Row="2" Text="чувствуется как" Style="{StaticResource WeatherParameterTB}" TextDecorations="Underline"/>
+                        <TextBlock Grid.Row="3" Text="Давление, мм" Style="{StaticResource WeatherParameterTB}"/>
+                        <TextBlock Grid.Row="4" Text="Влажность, %" Style="{StaticResource WeatherParameterTB}"/>
+                        <TextBlock Grid.Row="5" Text="Ветер, м/сек" Style="{StaticResource WeatherParameterTB}"/>
+                        <TextBlock Grid.Row="6" Text="Вероятность осадков, %" Style="{StaticResource WeatherParameterTB}"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="240"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="14"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
 
+                    <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Text="ночь" TextAlignment="Center" FontSize="13"/>
+                    <TextBlock Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Text="утро" TextAlignment="Center" FontSize="13"/>
+                    <TextBlock Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Text="день" TextAlignment="Center" FontSize="13"/>
+                    <TextBlock Grid.Column="6" Grid.Row="1" Grid.ColumnSpan="2" Text="вечер" TextAlignment="Center" FontSize="13"/>
+
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="0 :00" Style="{StaticResource DayTimeTB}"/>
+                    <TextBlock Grid.Column="1" Grid.Row="2" Text="3 :00" Style="{StaticResource DayTimeTB}"/>
+                    <TextBlock Grid.Column="2" Grid.Row="2" Text="6 :00" Style="{StaticResource DayTimeTB}"/>
+                    <TextBlock Grid.Column="3" Grid.Row="2" Text="9 :00" Style="{StaticResource DayTimeTB}"/>
+                    <TextBlock Grid.Column="4" Grid.Row="2" Text="12 :00" Style="{StaticResource DayTimeTB}"/>
+                    <TextBlock Grid.Column="5" Grid.Row="2" Text="15 :00" Style="{StaticResource DayTimeTB}"/>
+                    <TextBlock Grid.Column="6" Grid.Row="2" Text="18 :00" Style="{StaticResource DayTimeTB}"/>
+                    <TextBlock Grid.Column="7" Grid.Row="2" Text="21 :00" Style="{StaticResource DayTimeTB}"/>
+
+                    <GridSplitter Grid.Column="1" Grid.Row="1" Grid.RowSpan="9" Width="1" Background="{StaticResource Color.Midle.Gray}" Panel.ZIndex="1"/>
+                    <GridSplitter Grid.Column="3" Grid.Row="1" Grid.RowSpan="9" Width="1" Background="{StaticResource Color.Midle.Gray}" Panel.ZIndex="1"/>
+                    <GridSplitter Grid.Column="5" Grid.Row="1" Grid.RowSpan="9" Width="1" Background="{StaticResource Color.Midle.Gray}" Panel.ZIndex="1"/>
+
+                    <Image Grid.Column="0" Grid.Row="3" Source="{Binding Night0}"/>
+                    <Image Grid.Column="1" Grid.Row="3" Source="{Binding Night3}"/>
+                    <Image Grid.Column="2" Grid.Row="3" Source="{Binding Morning6}"/>
+                    <Image Grid.Column="3" Grid.Row="3" Source="{Binding Morning9}"/>
+                    <Image Grid.Column="4" Grid.Row="3" Source="{Binding Day12}"/>
+                    <Image Grid.Column="5" Grid.Row="3" Source="{Binding Day15}"/>
+                    <Image Grid.Column="6" Grid.Row="3" Source="{Binding Evening18}"/>
+                    <Image Grid.Column="7" Grid.Row="3" Source="{Binding Evening21}"/>
+
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="{Binding Temperature1}" Style="{StaticResource Temperature}"/>
+                    <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Temperature2}" Style="{StaticResource Temperature}"/>
+                    <TextBlock Grid.Column="2" Grid.Row="4" Text="{Binding Temperature3}" Style="{StaticResource Temperature}"/>
+                    <TextBlock Grid.Column="3" Grid.Row="4" Text="{Binding Temperature4}" Style="{StaticResource Temperature}"/>
+                    <TextBlock Grid.Column="4" Grid.Row="4" Text="{Binding Temperature5}" Style="{StaticResource Temperature}"/>
+                    <TextBlock Grid.Column="5" Grid.Row="4" Text="{Binding Temperature6}" Style="{StaticResource Temperature}"/>
+                    <TextBlock Grid.Column="6" Grid.Row="4" Text="{Binding Temperature7}" Style="{StaticResource Temperature}"/>
+                    <TextBlock Grid.Column="7" Grid.Row="4" Text="{Binding Temperature8}" Style="{StaticResource Temperature}"/>
+
+                    <TextBlock Grid.Column="0" Grid.Row="5" Text="{Binding Fells}" Style="{StaticResource Fells}"/>
+                    <TextBlock Grid.Column="1" Grid.Row="5" Text="{Binding Fells2}" Style="{StaticResource Fells}"/>
+                    <TextBlock Grid.Column="2" Grid.Row="5" Text="{Binding Fells3}" Style="{StaticResource Fells}"/>
+                    <TextBlock Grid.Column="3" Grid.Row="5" Text="{Binding Fells4}" Style="{StaticResource Fells}"/>
+                    <TextBlock Grid.Column="4" Grid.Row="5" Text="{Binding Fells5}" Style="{StaticResource Fells}"/>
+                    <TextBlock Grid.Column="5" Grid.Row="5" Text="{Binding Fells6}" Style="{StaticResource Fells}"/>
+                    <TextBlock Grid.Column="6" Grid.Row="5" Text="{Binding Fells7}" Style="{StaticResource Fells}"/>
+                    <TextBlock Grid.Column="7" Grid.Row="5" Text="{Binding Fells8}" Style="{StaticResource Fells}"/>
+
+                    <TextBlock Grid.Column="0" Grid.Row="6" Text="{Binding Presuare}" Style="{StaticResource Presuare}"/>
+                    <TextBlock Grid.Column="1" Grid.Row="6" Text="{Binding Presuare2}" Style="{StaticResource Presuare}"/>
+                    <TextBlock Grid.Column="2" Grid.Row="6" Text="{Binding Presuare3}" Style="{StaticResource Presuare}"/>
+                    <TextBlock Grid.Column="3" Grid.Row="6" Text="{Binding Presuare4}" Style="{StaticResource Presuare}"/>
+                    <TextBlock Grid.Column="4" Grid.Row="6" Text="{Binding Presuare5}" Style="{StaticResource Presuare}"/>
+                    <TextBlock Grid.Column="5" Grid.Row="6" Text="{Binding Presuare6}" Style="{StaticResource Presuare}"/>
+                    <TextBlock Grid.Column="6" Grid.Row="6" Text="{Binding Presuare7}" Style="{StaticResource Presuare}"/>
+                    <TextBlock Grid.Column="7" Grid.Row="6" Text="{Binding Presuare8}" Style="{StaticResource Presuare}"/>
+
+                    <TextBlock Grid.Column="0" Grid.Row="7" Text="{Binding Humidity}" Style="{StaticResource Humidity}"/>
+                    <TextBlock Grid.Column="1" Grid.Row="7" Text="{Binding Humidity2}" Style="{StaticResource Humidity}"/>
+                    <TextBlock Grid.Column="2" Grid.Row="7" Text="{Binding Humidity3}" Style="{StaticResource Humidity}"/>
+                    <TextBlock Grid.Column="3" Grid.Row="7" Text="{Binding Humidity4}" Style="{StaticResource Humidity}"/>
+                    <TextBlock Grid.Column="4" Grid.Row="7" Text="{Binding Humidity5}" Style="{StaticResource Humidity}"/>
+                    <TextBlock Grid.Column="5" Grid.Row="7" Text="{Binding Humidity6}" Style="{StaticResource Humidity}"/>
+                    <TextBlock Grid.Column="6" Grid.Row="7" Text="{Binding Humidity7}" Style="{StaticResource Humidity}"/>
+                    <TextBlock Grid.Column="7" Grid.Row="7" Text="{Binding Humidity8}" Style="{StaticResource Humidity}"/>
+
+                    <TextBlock Grid.Column="0" Grid.Row="8" Text="{Binding Wind}" Style="{StaticResource Wind}"/>
+                    <TextBlock Grid.Column="1" Grid.Row="8" Text="{Binding Wind2}" Style="{StaticResource Wind}"/>
+                    <TextBlock Grid.Column="2" Grid.Row="8" Text="{Binding Wind3}" Style="{StaticResource Wind}"/>
+                    <TextBlock Grid.Column="3" Grid.Row="8" Text="{Binding Wind4}" Style="{StaticResource Wind}"/>
+                    <TextBlock Grid.Column="4" Grid.Row="8" Text="{Binding Wind5}" Style="{StaticResource Wind}"/>
+                    <TextBlock Grid.Column="5" Grid.Row="8" Text="{Binding Wind6}" Style="{StaticResource Wind}"/>
+                    <TextBlock Grid.Column="6" Grid.Row="8" Text="{Binding Wind7}" Style="{StaticResource Wind}"/>
+                    <TextBlock Grid.Column="7" Grid.Row="8" Text="{Binding Wind8}" Style="{StaticResource Wind}"/>
+
+                    <TextBlock Grid.Column="0" Grid.Row="9" Text="{Binding Precipitation}" Style="{StaticResource Precipitation}"/>
+                    <TextBlock Grid.Column="1" Grid.Row="9" Text="{Binding Precipitation2}" Style="{StaticResource Precipitation}"/>
+                    <TextBlock Grid.Column="2" Grid.Row="9" Text="{Binding Precipitation3}" Style="{StaticResource Precipitation}"/>
+                    <TextBlock Grid.Column="3" Grid.Row="9" Text="{Binding Precipitation4}" Style="{StaticResource Precipitation}"/>
+                    <TextBlock Grid.Column="4" Grid.Row="9" Text="{Binding Precipitation5}" Style="{StaticResource Precipitation}"/>
+                    <TextBlock Grid.Column="5" Grid.Row="9" Text="{Binding Precipitation6}" Style="{StaticResource Precipitation}"/>
+                    <TextBlock Grid.Column="6" Grid.Row="9" Text="{Binding Precipitation7}" Style="{StaticResource Precipitation}"/>
+                    <TextBlock Grid.Column="7" Grid.Row="9" Text="{Binding Precipitation8}" Style="{StaticResource Precipitation}"/>
+                </Grid>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sinoptik_Parse_WPF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace Sinoptik_Parse_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private SinoptikViewModel _sinoptikVM;
         public MainWindow()
         {
             InitializeComponent();
+            _sinoptikVM = new();
+            this.DataContext = _sinoptikVM;
         }
     }
 }
