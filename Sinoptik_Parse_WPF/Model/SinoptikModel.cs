@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using System.Collections.ObjectModel;
 using HtmlAgilityPack;
@@ -65,7 +62,7 @@ namespace Sinoptik_Parse_WPF.Model
             {
                 TodayWeather = item.InnerText.Replace("&deg;", "°");
                 var temp = item.InnerText.Replace("&deg;", "").Replace("+", "").Replace("-", "").Replace("C", "");
-                TermometerValue = Convert.ToInt32(temp) + 15;
+                TermometerValue = Convert.ToInt32(temp) + 10;
             }
             foreach (var item in htmlDocument.DocumentNode.SelectNodes("//p[@class='today-time']"))
             {

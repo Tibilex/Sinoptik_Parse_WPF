@@ -1,11 +1,6 @@
 ﻿using Sinoptik_Parse_WPF.Helpers;
 using Sinoptik_Parse_WPF.Model;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
 namespace Sinoptik_Parse_WPF.ViewModel
