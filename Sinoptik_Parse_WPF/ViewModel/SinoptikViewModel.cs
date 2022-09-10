@@ -584,6 +584,6 @@ namespace Sinoptik_Parse_WPF.ViewModel
             _sinoptik.GetImagesInHTML(_images);
             _sinoptik.WeaterData();
             _sinoptik.WeaterDataTable(_weatherDataTabe);
-        }
+        }      
     }
 }

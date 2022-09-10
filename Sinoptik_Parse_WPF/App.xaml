@@ -8,7 +8,6 @@
             <ResourceDictionary.MergedDictionaries>
 
                 <ResourceDictionary Source="Styles/AppElementsStyles.xaml" />
-                <!--<ResourceDictionary Source="Styles/TimeThemeNight.xaml" />-->
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
